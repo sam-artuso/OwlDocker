@@ -16,7 +16,8 @@ To build the image:
 
     docker build -t RebelTechnology/owl-compiler .
 
-The build takes time. If you need to share it with someone else, export it to a file:
+The build takes time. If you need to share the image with someone else, export
+it to a file:
 
     docker save -o owl-compiler.tar RebelTechnology/owl-compiler
 
