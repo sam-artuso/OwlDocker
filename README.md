@@ -14,12 +14,12 @@ developer dependency_ that is provided for convenience.
 ## How to use it
 To build the image:
 
-    docker build -t RebelTechnology/owl-compiler .
+    docker build -t rebeltechnology/owl-compiler .
 
 The build takes time. If you need to share the image with someone else, export
 it to a file:
 
-    docker save -o owl-compiler.tar RebelTechnology/owl-compiler
+    docker save -o owl-compiler.tar rebeltechnology/owl-compiler
 
 And they'll be able to import with:
 
@@ -27,7 +27,7 @@ And they'll be able to import with:
 
 To start the container:
 
-    docker run -dt --name owl-compiler RebelTechnology/owl-compiler
+    docker run -dt -v /tmp/owl:/tmp/owl --name owl-compiler rebeltechnology/owl-compiler
 
 To run a command within the container:
 
