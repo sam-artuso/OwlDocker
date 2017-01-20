@@ -55,3 +55,6 @@ RUN apt-get update && \
     wget --quiet https://github.com/pingdynasty/FirmwareSender/releases/download/v0.1/FirmwareSender-linux64.zip && \
     unzip FirmwareSender-linux64.zip && \
     rm -f FirmwareSender-linux64.zip
+
+ENV EM_CACHE /opt/.emscripten_cache
+ENV EM_CONFIG /opt/.emscripten
