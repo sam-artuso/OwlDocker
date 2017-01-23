@@ -27,6 +27,8 @@ And they'll be able to import with:
 
 To start the container:
 
+    mkdir /tmp/owl
+    chown -R $(whoami):$(id -g -n $(whoami)) /tmp/owl
     docker run -dt -v /tmp/owl:/tmp/owl --name owl-program rebeltechnology/owl-program
 
 To run a command within the container:
