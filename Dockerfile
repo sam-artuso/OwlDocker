@@ -8,7 +8,8 @@ RUN apt-get update && \
     >&2 echo '################################' && \
     >&2 echo '### Installing emscripten... ###' && \
     >&2 echo '################################' && \
-    apt-get install -y build-essential cmake python2.7 nodejs default-jre && \
+    apt-get install -y build-essential make cmake python2.7 nodejs npm default-jre && \
+    cd /usr/bin && ln -s ./nodejs ./node && \
     cd /opt && \
     wget --quiet 'https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz' && \
     tar -xf emsdk-portable.tar.gz && \
@@ -42,6 +43,7 @@ RUN apt-get update && \
     >&2 echo '### Installing ARM compiler... ###' && \
     >&2 echo '##################################' && \
     cd /opt/OwlProgram.online/Tools && \
+    npm install uglifyjs && \
     apt-get install -y lib32z1 lib32ncurses5 && \
     apt-get autoremove -y && \
     wget --quiet 'https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q2-update/+download/gcc-arm-none-eabi-5_4-2016q2-20160622-linux.tar.bz2' && \
@@ -58,3 +60,4 @@ RUN apt-get update && \
 
 ENV EM_CACHE /opt/.emscripten_cache
 ENV EM_CONFIG /opt/.emscripten
+ENV PATH "$PATH:/opt/emsdk_portable/emscripten/master"

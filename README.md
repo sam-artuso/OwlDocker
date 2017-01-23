@@ -14,25 +14,25 @@ developer dependency_ that is provided for convenience.
 ## How to use it
 To build the image:
 
-    docker build -t rebeltechnology/owl-compiler .
+    docker build -t rebeltechnology/owl-program .
 
 The build takes time. If you need to share the image with someone else, export
 it to a file:
 
-    docker save -o owl-compiler.tar rebeltechnology/owl-compiler
+    docker save -o owl-program.tar rebeltechnology/owl-program
 
 And they'll be able to import with:
 
-    docker load -i owl-compiler.tar
+    docker load -i owl-program.tar
 
 To start the container:
 
-    docker run -dt -v /tmp/owl:/tmp/owl --name owl-compiler rebeltechnology/owl-compiler
+    docker run -dt -v /tmp/owl:/tmp/owl --name owl-program rebeltechnology/owl-program
 
 To run a command within the container:
 
-    docker exec owl-compiler ls /opt
+    docker exec owl-program ls /opt
 
 To attach the container:
 
-    docker exec -it owl-compiler /bin/bash
+    docker exec -it owl-program /bin/bash
